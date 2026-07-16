@@ -19,11 +19,7 @@ Three rules:
 2. **Everything here must be checkable.** We will follow your file paths and click your links. A claim we cannot verify does not count.
 3. **Link to permanent URLs, not moving ones.** See the note on line numbers below.
 
-> **Reminder — Markdown link syntax.** Write links as `[link text](https://example.com)`.
-> The visible words go in the square brackets and the URL goes in the parentheses, with
-> no space between the two. For example, `[Permalink to load.py](https://github.com/...)`
-> renders as [Permalink to load.py](https://github.com/...). Bare URLs work too, but
-> named links are easier to read.
+> **Reminder — Markdown link syntax.** Write links as `[link text](https://example.com)`. The visible words go in the square brackets and the URL goes in the parentheses, with no space between the two. For example, `[Permalink to load.py](https://github.com/...)` renders as [Permalink to load.py](https://github.com/...). Bare URLs work too, but named links are easier to read.
 
 ### A note on line numbers and links
 

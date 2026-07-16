@@ -22,15 +22,15 @@ Sit down and decide, out loud, right now:
 
 Write the letters down on paper with names to help you remember who is who. The rest of this guide refers to you by letter.
 
-### Everyone: Get an account
+### Everyone: Get an account (if you don't have one)
 
 If you don't have a GitHub account, make one now at <https://github.com/signup>.
 
 Use a username you'd be willing to show an employer. You are going to be living in this account for the rest of the semester.
 
-### Everyone: install two programs
+### Everyone: install two programs (if you haven't already)
 
-You need **git** (the program that tracks changes) and **gh** (GitHub's command-line tool, which makes everything else much easier).
+You need **git** (the program that tracks changes) and **gh** (GitHub's command-line tool). You will use `gh` exactly once, in the log-in step below, to connect your laptop to your GitHub account. Every other interaction with GitHub in this guide is either a `git` command or a click on the GitHub website.
 
 **On macOS**, open the Terminal app and run:
 
@@ -51,7 +51,7 @@ gh --version
 
 Each should print a version number. If either says "command not found," stop and fix it before going on. Do not let one person get left behind here.
 
-### Everyone: tell git who you are
+### Everyone: tell git who you are (if you haven't already)
 
 Git stamps your name and email on every commit you make. If you skip this, your commits will be labeled with something useless like `root@laptop.local`, and we will not be able to tell that the work is yours.
 
@@ -65,7 +65,7 @@ git config --global init.defaultBranch main
 
 **Important:** the email must be one that's on your GitHub account. Check what's on your account at <https://github.com/settings/emails>. If the email here doesn't match one there, GitHub won't connect your commits to your profile, and you'll appear to have done nothing.
 
-### Everyone: log in
+### Everyone: log in (if you haven't already)
 
 ```
 gh auth login
@@ -231,9 +231,11 @@ git push -u origin add-beth-chen
 
 Your branch now exists on GitHub. Your change still isn't in the main version. Currently, it's sitting in a side room, waiting to be let in.
 
-**Step 6 — ask for it to be let in.**
+**Step 6 — open a pull request on the GitHub website.**
 
-Use the GitHub website to create a pull request. A pull request is a formal request to merge your work into the main version. It will print a link. Read that link out loud so Student A can find it.
+Go to your repository page on github.com and refresh it. GitHub will show a banner near the top saying your branch had recent pushes, with a green **Compare & pull request** button. Click that button, type a short description of what you did (the commit message is a fine default), and click **Create pull request**.
+
+A pull request is a formal request to merge your work into the main version. Once created, the pull request has its own URL in your browser's address bar — copy it and share it with Student A so they can review.
 
 Your turn is over. Now A takes over.
 
