@@ -2,9 +2,9 @@
 
 ## A one-hour setup session for your group
 
-Do this **together, in one room, at one time**, with everyone's laptop open. It takes about an hour. Do not try to do it over text message across three days. The steps depend on each other, and doing them out of order is how groups break their repository in week one.
+Do this together, in one room, at one time, with everyone’s laptop open. It takes about an hour (but could take more). Do not try to do it over text message across three days. The steps depend on each other, and doing them out of order is how groups break their repository in week one.
 
-By the end of this session your group will have a repository, everyone will have made their first commit, and everyone will have opened and merged their first pull request. That's the whole goal. You are not doing any project work today.
+By the end of this session your group will have a repository, everyone will have made their first commit, and everyone will have opened and merged their first pull request. That’s the whole goal.
 
 ---
 
@@ -14,23 +14,21 @@ By the end of this session your group will have a repository, everyone will have
 
 Sit down and decide, out loud, right now:
 
-- **Student A** — creates the repository and merges everyone's work. Pick someone whose laptop is charged and whose GitHub account already exists.
-- **Student B**
+- **Student A** This student will be the one to creates the repository. Later as members contribute this student will be the one who also merges everyone’s work. Hint: Pick someone whose laptop is charged and whose GitHub account already exists.
+- **Student B** This student will be a collaborator in the repository. Student B will review Student A's pull requests.
 - **Student C**
 - **Student D**
-- **Student E** — skip if your group has four people.
+- **Student E** (Skip if your group has four people).
 
 Write the letters down on paper with names to help you remember who is who. The rest of this guide refers to you by letter.
 
 ### Everyone: Get an account (if you don't have one)
 
-If you don't have a GitHub account, make one now at <https://github.com/signup>.
-
-Use a username you'd be willing to show an employer. You are going to be living in this account for the rest of the semester.
+If you don't have a GitHub account, make one now at <https://github.com/signup>. Use a username you'd be glad to show an employer.
 
 ### Everyone: install two programs (if you haven't already)
 
-You need **git** (the program that tracks changes) and **gh** (GitHub's command-line tool). You will use `gh` exactly once, in the log-in step below, to connect your laptop to your GitHub account. Every other interaction with GitHub in this guide is either a `git` command or a click on the GitHub website.
+You need `git` (the program that tracks changes) and `gh` (GitHub's command-line tool). You will use `gh` at least once, in the log-in step below, to connect your laptop to your GitHub account. Every other interaction with GitHub in this guide is either a `git` command or a click on the GitHub website.
 
 **On macOS**, open the Terminal app and run:
 
@@ -49,7 +47,7 @@ git --version
 gh --version
 ```
 
-Each should print a version number. If either says "command not found," stop and fix it before going on. Do not let one person get left behind here.
+Each should print a version number. If either says "command not found," stop and fix it before going on. Get help from others in your group if you need it. Do not let one person get left behind here.
 
 ### Everyone: tell git who you are (if you haven't already)
 
@@ -63,7 +61,7 @@ git config --global user.email "bchen42@wisc.edu"
 git config --global init.defaultBranch main
 ```
 
-**Important:** the email must be one that's on your GitHub account. Check what's on your account at <https://github.com/settings/emails>. If the email here doesn't match one there, GitHub won't connect your commits to your profile, and you'll appear to have done nothing.
+**Important:** the email must be one that's on your GitHub account. Check what's on your account at <https://github.com/settings/emails> (hint: find the anonymized email address GitHub provides).
 
 ### Everyone: log in (if you haven't already)
 
@@ -78,7 +76,7 @@ It will ask you several questions. Answer:
 - **Authenticate Git with your GitHub credentials?** → Yes
 - **How would you like to authenticate?** → Login with a web browser
 
-It shows you an eight-character code. Copy it, press Enter, paste the code into the browser window that opens, and approve. Come back to the terminal when it says you're logged in.
+In the terminal `gh auth` will an eight-character code. Copy it, paste the code into the browser window that opens, and approve. Come back to the terminal to proceed.
 
 Everyone do this now. Wait until all five of you are done.
 
@@ -92,88 +90,83 @@ Everyone do this now. Wait until all five of you are done.
 2. Set it to **Public**. (Never put passwords, API keys, or private data in this repo.)
 3. Click **Create repository**.
 
-### Student A: add everyone else
+### Student A: Add Student B as a colaborator
 
 Still on the new repository page:
 
 1. Click **Settings** (top of the page).
 2. Click **Collaborators** in the left sidebar.
 3. Click **Add people**.
-4. Type each teammate's GitHub username, one at a time, and add them.
+4. Type Student B's GitHub username, and add them.
 
-**B, C, D, and E:** check your email now. GitHub sent you an invitation. Click the link and accept it. You cannot do anything else in this guide until you accept.
+**B** check your email now. GitHub sent you an invitation. Click the link and accept it. You cannot do anything else in this guide until you accept.
 
-### Student A: add the instructor
+### Student C: Clone the repository and add new files
 
-Add **[INSTRUCTOR: paste the instructor/TA GitHub username here]** as a collaborator too, the same way. Do this today, not later.
+1. Fork the repository to your own GitHub account
+2. Clone the forked repository to your computer
+3. Copy `contributions.md` to your cloned repository
+4. Copy `README.md` to your cloned repository
+5. Revise away templated placeholders in both files.
+6. Commit and push your changes to your forked repository.
+7. Open a pull request for Student A to review and pull into the main repository.
 
-### Student A: Copy template files
+### Student A: Review and merge Student C's pull request
 
-1. Copy `contributions.md` to your new repository
-2. Copy `README.md` to your new repository
-3. Revise away templated placeholders in both files.
-
-### Student A: read the repo's address out loud
-
-The address looks like:
-
-```
-https://github.com/STUDENT-A-USERNAME/ds-final-group07
-```
-
-Everyone write it down. You'll need it in ten seconds.
+1. Go to the pull request page
+2. Review the changes
+3. Merge the pull request
 
 ---
 
-## Part 2: Everyone downloads a copy
+## Part 2: Discuss and plan your project structure
 
-**All five of you do this**, at the same time.
-
-Pick a place on your laptop where you keep schoolwork, and go there:
-
-```
-cd ~/Projects
-```
-
-Now make your own copy of the repository (use your real repo address):
-
-```
-git clone https://github.com/STUDENT-A-USERNAME/ds-final-group07.git
-```
-
-Then step into the folder it just made:
-
-```
-cd ds-final-group07
-```
-
-Check that it worked:
-
-```
-ls -lhra
-```
-
-You should see `README.md` and the other course files. If you do, you now have a full copy of the repository on your laptop. Everyone confirm out loud before moving on.
+What folder will you create to store original data files?
+What folder will you create to store cleaned data files?
+How will you organize each group member's memos? (Hint: Create a subfolder for each member)
+What other organizational structures will you use?
 
 ---
 
-## Part 3: The loop
+## Part 3: Implement your organizational decisoins
 
-Here's the pattern for the rest of the session. Each student in turn adds their own row to the members table in `README.md`. **One person at a time, in letter order.**
+### Student D: Clone the repository and implement the organizational structure discussed in Part 2
 
-> ### The one rule that matters
+1. Fork the repository to your own GitHub account
+2. Clone the forked repository to your computer
+3. Implement the organizational structure discussed in Part 2 (Create folders)
+4. Commit and push your changes to your forked repository
+5. Open a pull request for Student A to review and pull into the main repository
+
+### Student B: Review and approve Student D's pull request
+
+1. Go to the pull request page
+2. Review the changes
+3. Merge the pull request
+
+---
+
+## Part 3: Practice the loop
+
+Each student in turn adds their own row to the members table in `README.md`. **Recommended to proceed one person at a time, in letter order.**
+
+> ### Going in order helps learn the process
 >
 > **Wait your turn, and pull before you start.**
 >
-> You are all editing the same three lines of the same file. If two of you work at the same time, git will not know whose version is right, and you'll get a *merge conflict* (which is fixable, but not what you want in your first hour).
+> You are all editing the same (or similar) lines of the same file. If two of you work at the same time, you may experience "merge conflicts" (git will not know whose version is right), which is fixable, but not what you want in your first hour.
 >
-> Student B goes completely, start to finish. **Then** C starts. Then D. Then E. Then A. Or course also execute a pull request and merge between each student's efforts. To avoid the conflicts, nobody starts their turn until the person before them is merged and A says "go."
+> Student A goes completely, start to finish. **Then** B starts. Then C. Then D. Then E. Of course also execute a pull request and merge between each student's efforts. To avoid the conflicts, nobody starts their turn until the person before them is merged and Student A (or Student B) says "go."
 
 ### Your turn: the six steps
 
-When it's your turn, run these. The example is Student B; use your own name.
+Start this practice loop with Student B. When it's your turn, run these. The example is Student B; use your own name.
 
-**Step 1 — get the latest version.**
+**Step 0 - Pull the latest version to your own forked repository**
+
+Go to your forked repository on GitHub and pull the latest changes to ensure you have the most recent version.
+
+**Step 1 — Clone the latest version from your forked repository.**
 
 ```
 git fetch
@@ -182,17 +175,7 @@ git pull
 
 The commands `git fetch` and `git pull` download whatever your teammates have already merged. Skipping this is the single most common way to create a mess.
 
-**Step 2 — make your own branch.**
-
-```
-git switch -c add-beth-chen
-```
-
-A branch is your own private workspace. Nothing you do here touches anyone else until you ask for it to.
-
-Name it `add-yourname`, all lowercase, hyphens instead of spaces.
-
-**Step 3 — edit the file.**
+**Step 2 — Edit the file.**
 
 Open `README.md` in whatever editor you like. Find the members table near the top. It looks like this:
 
@@ -203,7 +186,7 @@ Open `README.md` in whatever editor you like. Find the members table near the to
 | | |
 ```
 
-Fill in **one** empty row — yours — with your real name and your GitHub username:
+Fill in **one** empty row (yours) with your real name and your GitHub username:
 
 ```
 | Name | GitHub username |
@@ -214,42 +197,42 @@ Fill in **one** empty row — yours — with your real name and your GitHub user
 
 Leave the other rows alone. Save the file.
 
-**Step 4 — save your change to git.**
+**Step 4 — Save your change to git.**
 
 ```
 git add README.md
 git commit -m "Add Beth Chen to members table"
 ```
 
-`git add` says "this is the file I changed." `git commit` says "save this change, with this description." The description in quotes is a *commit message.*
+`git add` says "this is the file I changed." `git commit` says "save this change, with this description." The description in quotes is a *commit message.* A reminder is that commit messages let you quickly review your git commit history to understand what edits were in which commits.
 
-**Step 5 — send your branch to GitHub.**
+**Step 5 — Push your work to your forked repository on GitHub.**
 
 ```
-git push -u origin add-beth-chen
+git push
 ```
 
 Your branch now exists on GitHub. Your change still isn't in the main version. Currently, it's sitting in a side room, waiting to be let in.
 
-**Step 6 — open a pull request on the GitHub website.**
+**Step 6 — Open a pull request on the GitHub website.**
 
-Go to your repository page on github.com and refresh it. GitHub will show a banner near the top saying your branch had recent pushes, with a green **Compare & pull request** button. Click that button, type a short description of what you did (the commit message is a fine default), and click **Create pull request**.
+Go to your repository page on github.com (your fork) and refresh it. Find the pull reqeusts section, click new pull request, follow the on-screen instructions to create a pull request that will pull and merge your forked changes into your group's main repository.
 
-A pull request is a formal request to merge your work into the main version. Once created, the pull request has its own URL in your browser's address bar — copy it and share it with Student A so they can review.
+Remember that, a pull request is a formal request to merge your work into the main version. Once created, the pull request has its own URL in your browser's address bar — copy it and share it with Student A so they can review.
 
-Your turn is over. Now A takes over.
+Your turn is over. Now A takes over. (Also note that Student B could also now respond to your pull request if they your your group wanted B to so.)
 
 ### Student A: review and merge
 
-Every time a teammate finishes step 6, then Student A does this.
+Every time a teammate submits a pull request, then Student A (or Student B) will need to do as follows.
 
-Review the pull requests on the GitHub Website. **Look at what they actually changed using the "Files changed" tab.**
+Review the pull requests on the GitHub Website. **Look at what actually changed using the "Files changed" tab.**
 
-Green lines with `+` were added. Red lines with `-` were removed. **Actually look.** You are checking two things: did they add their own row, and did they leave everyone else's alone? This takes five seconds and it is the entire point of a pull request.
+Green lines with `+` were added. Red lines with `-` were removed. Actually look. You are checking two things: did they add their own row, and did they leave everyone else's alone? This takes five seconds and it is the entire point of a pull request.
 
-**Let it in:**
+**Let those changes in:**
 
-On the GitHub website, click the "Merge pull request" button. If it asks whether to delete the local branch, say yes.
+On the GitHub website, click the "Merge pull request" button.
 
 Now say "go" to the next student, out loud. They will pull your merge down in their step 1 and build on top of it.
 
@@ -257,18 +240,17 @@ Now say "go" to the next student, out loud. They will pull your merge down in th
 
 ## Part 4: Student A's turn
 
-Student A goes last, and Student A does **not** merge their own work. Somebody else has to read it (that's true for the rest of the semester too).
+Student A goes last, and Student A does not merge their own work. Somebody else has to read it (that's true for the rest of the semester too).
 
-**Student A:** Do the six steps in Part 3 exactly like everyone else, with your own name.
+**Student A:** Do the six *look practice* steps in Part 3 exactly like everyone else, with your own name.
 
-**Student E** (or D, in a group of four): you merge Student A's pull request. Again using GitHub website, click the "Merge pull request" button.
-
-Congratulations — the last person to touch the repo today wasn't the landlord.
+**Student B** ou merge Student A's pull request. Again using GitHub website, click the "Merge pull request" button.
 
 ---
 
 ## What today established
 
 - **Student A owns the repository.** A created it and can add or remove people. That's a chore, not a rank. A is not the boss of this project.
+- **Student B is a backup collaborator.** B can merge pull requests and make changes to the repository. If Student A becomes unavailable then Student B can step in (again not a rank, it is a chore).
 - **Nothing reaches `main` without a pull request.** Not even A's work. Someone other than the author looks at every change before it lands.
-- **Every one of you has a working setup.** Git is installed, you're authenticated, your commits carry your name, and you've been through the whole loop once on a change that didn't matter.
+- **Every one in each group has a working setup.** Git is installed, you're authenticated, your commits carry your name, and you've been through the whole loop once on a change that didn't matter.
